@@ -3,22 +3,25 @@
 <head>
 <meta charset="UTF-8">
 <title>haneum search</title>
-<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+<script
+  src="https://code.jquery.com/jquery-3.3.1.slim.js"
+  integrity="sha256-fNXJFIlca05BIO2Y5zh1xrShK3ME+/lYZ0j+ChxX2DA="
+  crossorigin="anonymous"></script>
 <script>
-$(document).on(function() {
-	$('form').on('submit', function(event) {
-		$('form')
-			.prop('action', '../articles/' 
-					+ $('#company_name').val());
+	$(document).on(function() {	
+		
 	});
-});
 </script>
 </head>
 <body>
-{{ msg }}<br>
-<form method="post" action="#">
-<input type="text" name="company_name" id="company_name">
-<input type="submit" value="search">
-</form>
+	{{ msg }}
+	<br>
+	<form action="{% url 'articles' %}" method="post">{% csrf_token %}
+		<input type="text" name="company_name" id="company_name"> 
+		<input type="submit" value="search">
+	</form>
+	<div id="articles"></div>
+	<div id="analytics"></div>
+	<div id="prediction"></div>
 </body>
 </html>

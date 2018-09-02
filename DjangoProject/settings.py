@@ -50,7 +50,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'DjangoProject.urls'
+ROOT_URLCONF = 'haneum.urls'
 
 TEMPLATES = [
     {
